@@ -21,12 +21,6 @@ namespace JwtAspNet.Service
 				Expires = DateTime.UtcNow.AddHours(1),
 				Subject = GenerateClaims(user),
 			};
-
-			new Claim(ClaimTypes.Name, "Iron Man");
-			new Claim(ClaimTypes.GivenName, "Tony Stark");
-			new Claim(ClaimTypes.Email, "PlayBoy@stark.com");
-			new Claim(ClaimTypes.Role, "login");
-
 			var token = handler.CreateToken(tokemDescriptor);
 			return handler.WriteToken(token);
 		}
